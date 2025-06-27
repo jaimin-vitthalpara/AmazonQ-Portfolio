@@ -1,0 +1,102 @@
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 25px;
+}
+
+.project-card {
+  background: rgba(0, 0, 0, 0.7);
+  border-radius: 20px;
+  padding: 25px;
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.1), rgba(59, 130, 246, 0.05), transparent);
+  transition: left 0.6s ease;
+}
+
+.project-card:hover::before {
+  left: 100%;
+}
+
+.project-card:hover {
+  transform: translateY(-15px) scale(1.02);
+  box-shadow: 0 25px 50px rgba(6, 182, 212, 0.2), 0 0 30px rgba(59, 130, 246, 0.15);
+  border-color: rgba(6, 182, 212, 0.4);
+}
+
+.project-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #00ff00;
+}
+
+.project-description {
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.project-tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.tech-tag {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%);
+  color: #06b6d4;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(6, 182, 212, 0.3);
+  text-shadow: none;
+  font-family: 'Inter', sans-serif;
+}
+
+.project-links {
+  display: flex;
+  gap: 15px;
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid rgba(0, 255, 0, 0.3);
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.project-link:hover {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15) 0%, rgba(59, 130, 246, 0.1) 100%);
+  border-color: #06b6d4;
+  color: #06b6d4;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(6, 182, 212, 0.3);
+  text-shadow: none;
+}

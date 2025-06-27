@@ -1,0 +1,1 @@
+.footer {\n  background: rgba(0, 0, 0, 0.8);\n  padding: 20px 0;\n  border-top: 1px solid rgba(0, 255, 0, 0.3);\n  margin-top: 40px;\n}\n\n.copyright {\n  color: #888;\n  text-align: center;\n  font-family: 'Ubuntu Mono', 'Courier New', monospace;\n  font-size: 0.9rem;\n}\n\n.copyright::before {\n  content: '$ ';\n  color: #00ff00;\n  opacity: 0.7;\n}

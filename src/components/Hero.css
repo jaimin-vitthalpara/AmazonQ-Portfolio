@@ -1,0 +1,358 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 100px 0 60px 0;
+}
+
+.hero-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 15px;
+  color: #00ff00;
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+  position: relative;
+}
+
+.typing-container {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+  color: #00ff00;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+}
+
+.typing-text {
+  overflow: hidden;
+  border-right: 3px solid #00ff00;
+  white-space: nowrap;
+  animation: typing 3s steps(18) 1s both, blink-caret 1s step-end infinite;
+}
+
+.cursor {
+  color: #00ff00;
+  animation: blink 1s infinite;
+  margin-left: 2px;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: #00ff00; }
+}
+
+.hero-title::before {
+  content: '';
+  display: none;
+}
+
+@keyframes terminalBlink {
+  0%, 70% { opacity: 1; }
+  71%, 100% { opacity: 0.3; }
+}
+
+
+
+@keyframes typewriter {
+  0%, 90% { width: 100%; }
+  95%, 100% { width: 100%; }
+}
+
+.hero-description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #cccccc;
+  margin-bottom: 30px;
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+  position: relative;
+  text-align: justify;
+  padding: 0 5px;
+  letter-spacing: 0.02em;
+  word-spacing: 0.05em;
+}
+
+.hero-description::before {
+  content: '# ';
+  color: #00ff00;
+  font-weight: bold;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin: 30px 0 35px 0;
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #00ff00;
+  text-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+  animation: terminalPulse 3s ease-in-out infinite;
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+  position: relative;
+}
+
+.stat-number::before {
+  content: '> ';
+  color: #ffffff;
+  font-size: 1rem;
+  margin-right: 5px;
+}
+
+@keyframes terminalPulse {
+  0%, 80% { 
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+    transform: scale(1);
+  }
+  90% { 
+    text-shadow: 0 0 20px rgba(0, 255, 0, 1), 0 0 30px rgba(255, 255, 255, 0.4);
+    transform: scale(1.05);
+  }
+  100% { 
+    text-shadow: 0 0 10px rgba(0, 255, 0, 0.6);
+    transform: scale(1);
+  }
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #cccccc;
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  margin-top: 15px;
+}
+
+.btn-primary, .btn-secondary {
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #00ff00 0%, #ffffff 100%);
+  color: #000;
+  box-shadow: 0 0 25px rgba(0, 255, 0, 0.5);
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #00ff00;
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+  font-weight: 700;
+  animation: buttonGlow 2s ease-in-out infinite alternate;
+}
+
+.btn-primary::before {
+  content: '$ ';
+  color: #000;
+}
+
+@keyframes buttonGlow {
+  from { box-shadow: 0 0 20px rgba(0, 255, 0, 0.4); }
+  to { box-shadow: 0 0 30px rgba(0, 255, 0, 0.8), 0 0 40px rgba(255, 255, 255, 0.4); }
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
+}
+
+.btn-secondary {
+  border: 2px solid #00ff00;
+  color: #00ff00;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+  font-weight: 700;
+  background: rgba(12, 12, 12, 0.8);
+  animation: buttonFlicker 3s ease-in-out infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-secondary::before {
+  content: '$ ';
+}
+
+.btn-secondary::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.7), rgba(255, 255, 255, 0.4), rgba(0, 255, 0, 0.7), transparent);
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
+
+.btn-secondary::after {
+  content: '';
+}
+
+@keyframes buttonFlicker {
+  0%, 90% { opacity: 1; }
+  95% { opacity: 0.7; }
+  100% { opacity: 1; }
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.05);
+  animation: hackPulse 0.3s ease-in-out;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.6);
+  animation: hackPulse 0.3s ease-in-out;
+}
+
+@keyframes hackPulse {
+  0% { transform: translateY(-3px) scale(1.05); }
+  50% { transform: translateY(-3px) scale(1.1); }
+  100% { transform: translateY(-3px) scale(1.05); }
+}
+
+.btn-resume {
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  border: 2px solid #00ff00;
+  color: #00ff00;
+  background: rgba(0, 0, 0, 0.3);
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+  position: relative;
+  overflow: hidden;
+  animation: resumeGlow 2s ease-in-out infinite alternate;
+}
+
+.btn-resume::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(0, 255, 0, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn-resume:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 15px 40px rgba(0, 255, 0, 0.4);
+  color: #ffffff;
+  border-color: #ffffff;
+}
+
+.btn-resume:hover::before {
+  left: 100%;
+}
+
+@keyframes resumeGlow {
+  from { box-shadow: 0 0 15px rgba(0, 255, 0, 0.3); }
+  to { box-shadow: 0 0 25px rgba(0, 255, 0, 0.6); }
+}
+
+.profile-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 0 auto 40px;
+}
+
+.profile-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid #00ff00;
+  box-shadow: 0 0 30px rgba(0, 255, 0, 0.6), 0 0 50px rgba(255, 255, 255, 0.2);
+  animation: terminalProfile 2s ease-in-out infinite alternate;
+  position: relative;
+  filter: contrast(1.2) saturate(1.1);
+}
+
+@keyframes terminalProfile {
+  from { 
+    box-shadow: 0 0 25px rgba(0, 255, 0, 0.5), 0 0 40px rgba(255, 255, 255, 0.1);
+    filter: contrast(1.2) saturate(1.1);
+  }
+  to { 
+    box-shadow: 0 0 35px rgba(0, 255, 0, 0.8), 0 0 60px rgba(255, 255, 255, 0.3);
+    filter: contrast(1.3) saturate(1.2);
+  }
+}
+
+.profile-placeholder {
+  display: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
+  border: 4px solid #00ff00;
+  align-items: center;
+  justify-content: center;
+  color: #00ff00;
+  font-weight: 700;
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+}
+
+.tech-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.tech-icon {
+  font-size: 2.5rem;
+  opacity: 0.7;
+  transition: all 0.3s ease;
+}
+
+.tech-icon:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.aws { color: #ff9900; }
+.docker { color: #2496ed; }
+.terraform { color: #7b42bc; }
+.jenkins { color: #d33833; }

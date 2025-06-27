@@ -1,0 +1,99 @@
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.header.scrolled {
+  background: rgba(12, 12, 12, 0.95);
+  border-bottom: 2px solid rgba(0, 255, 0, 0.4);
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.logo span {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #00ff00;
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+  letter-spacing: 1px;
+  position: relative;
+  animation: logoGlow 2s ease-in-out infinite alternate;
+}
+
+.logo span::before {
+  content: '$ ';
+  color: #ffffff;
+  animation: blink 1.5s infinite;
+}
+
+.logo span::after {
+  content: '_';
+  color: #00ff00;
+  animation: blink 1s infinite;
+  margin-left: 3px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+@keyframes logoGlow {
+  from { text-shadow: 0 0 5px rgba(0, 255, 0, 0.5); }
+  to { text-shadow: 0 0 15px rgba(0, 255, 0, 0.8), 0 0 25px rgba(255, 255, 255, 0.3); }
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+.nav-links a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+  position: relative;
+}
+
+.nav-links a::before {
+  content: '~/';
+  color: #00ff00;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #00ff00;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.8);
+  transform: translateY(-1px);
+  animation: textFlicker 0.5s ease-in-out;
+}
+
+.nav-links a:hover::before,
+.nav-links a:hover::after {
+  opacity: 1;
+}
+
+@keyframes textFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
