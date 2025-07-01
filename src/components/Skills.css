@@ -144,3 +144,49 @@
   0%, 100% { transform: translateY(0px); }
   50% { transform: translateY(-10px); }
 }
+
+@media (max-width: 768px) {
+  .skills-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .skill-flip-card {
+    height: 180px;
+  }
+  
+  .skill-icon {
+    font-size: 2.5rem;
+  }
+  
+  .skill-name {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .skill-flip-card {
+    height: 160px;
+  }
+  
+  .skill-icon {
+    font-size: 2rem;
+  }
+  
+  .skill-name {
+    font-size: 0.9rem;
+  }
+  
+  .skill-description {
+    font-size: 0.8rem;
+  }
+  
+  .skill-expertise {
+    font-size: 0.8rem;
+  }
+}

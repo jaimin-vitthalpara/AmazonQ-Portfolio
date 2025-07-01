@@ -93,7 +93,60 @@
   opacity: 1;
 }
 
+.nav-links a.active {
+  color: #00ff00;
+  text-shadow: 0 0 15px rgba(0, 255, 0, 1);
+  background: rgba(0, 255, 0, 0.1);
+  padding: 8px 16px;
+  border-radius: 20px;
+  animation: activePulse 2s ease-in-out infinite alternate;
+}
+
+.nav-links a.active::before {
+  opacity: 1;
+}
+
 @keyframes textFlicker {
   0%, 100% { opacity: 1; }
   50% { opacity: 0.7; }
+}
+
+@keyframes activePulse {
+  from { box-shadow: 0 0 5px rgba(0, 255, 0, 0.3); }
+  to { box-shadow: 0 0 15px rgba(0, 255, 0, 0.6); }
+}
+
+@media (max-width: 768px) {
+  .nav {
+    padding: 15px 0;
+  }
+  
+  .logo span {
+    font-size: 1.2rem;
+  }
+  
+  .nav-links {
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+  
+  .nav-links a {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+  
+  .nav-links a.active {
+    padding: 6px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    gap: 10px;
+  }
+  
+  .nav-links a {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+  }
 }

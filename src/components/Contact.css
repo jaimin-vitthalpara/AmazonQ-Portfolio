@@ -208,3 +208,80 @@
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 20px 50px rgba(0, 255, 0, 0.6), 0 0 40px rgba(255, 255, 255, 0.3);
 }
+
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .contact-info h3 {
+    font-size: 1.5rem;
+  }
+  
+  .contact-info p {
+    font-size: 0.9rem;
+  }
+  
+  .terminal-line {
+    padding: 8px;
+    min-height: 45px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .prompt {
+    font-size: 0.85rem;
+    width: auto;
+  }
+  
+  .terminal-link {
+    font-size: 0.85rem;
+    align-self: stretch;
+    justify-content: center;
+  }
+  
+  .contact-form {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-info h3 {
+    font-size: 1.3rem;
+  }
+  
+  .contact-info p {
+    font-size: 0.85rem;
+  }
+  
+  .terminal-line {
+    padding: 6px;
+    min-height: 40px;
+  }
+  
+  .prompt {
+    font-size: 0.8rem;
+  }
+  
+  .terminal-link {
+    font-size: 0.8rem;
+    padding: 8px;
+  }
+  
+  .contact-form {
+    padding: 20px;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 12px;
+    font-size: 0.9rem;
+  }
+  
+  .submit-btn {
+    padding: 15px;
+    font-size: 1rem;
+  }
+}

@@ -1,6 +1,6 @@
 import React from 'react';
-import { FaGithub, FaLinkedin, FaAws, FaDocker } from 'react-icons/fa';
-import { SiTerraform, SiJenkins } from 'react-icons/si';
+import { FaGithub, FaLinkedin, FaAws, FaDocker, FaLinux } from 'react-icons/fa';
+import { SiJenkins, SiKubernetes } from 'react-icons/si';
 import './Hero.css';
 
 const Hero = () => {
@@ -48,8 +48,9 @@ const Hero = () => {
             <div className="tech-icons">
               <FaAws className="tech-icon aws" />
               <FaDocker className="tech-icon docker" />
-              <SiTerraform className="tech-icon terraform" />
+              <FaLinux className="tech-icon linux" />
               <SiJenkins className="tech-icon jenkins" />
+              <SiKubernetes className="tech-icon kubernetes" />
             </div>
           </div>
         </div>
