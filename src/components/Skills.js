@@ -28,16 +28,8 @@ const Skills = () => {
                     {skill.icon}
                   </div>
                   <h3 className="skill-name">{skill.name}</h3>
-                  <div className="skill-bar">
-                    <div 
-                      className="skill-progress" 
-                      style={{ 
-                        width: `${skill.level}%`,
-                        backgroundColor: skill.color 
-                      }}
-                    ></div>
-                  </div>
-                  <span className="skill-level">{skill.level}%</span>
+
+
                 </div>
                 <div className="skill-flip-back">
                   <div className="skill-icon" style={{ color: skill.color }}>
@@ -45,9 +37,7 @@ const Skills = () => {
                   </div>
                   <h3 className="skill-name">{skill.name}</h3>
                   <p className="skill-description">{skill.description}</p>
-                  <div className="skill-expertise" style={{ color: skill.color }}>
-                    {skill.level >= 80 ? 'Proficient' : skill.level >= 70 ? 'Competent' : 'Learning'}
-                  </div>
+
                 </div>
               </div>
             </div>

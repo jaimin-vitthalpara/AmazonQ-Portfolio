@@ -428,7 +428,7 @@
 
 @media (max-width: 480px) {
   .hero {
-    padding: 80px 0 40px 0;
+    padding: 80px 0 60px 0;
   }
   
   .hero-title {
@@ -463,5 +463,78 @@
   .btn-primary, .btn-secondary {
     padding: 10px 20px;
     font-size: 0.9rem;
+  }
+}
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+}
+
+.scroll-arrow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #00ff00;
+  animation: bounce 2s infinite;
+  cursor: pointer;
+}
+
+.arrow-down {
+  width: 20px;
+  height: 20px;
+  border-right: 2px solid #00ff00;
+  border-bottom: 2px solid #00ff00;
+  transform: rotate(45deg);
+  margin-bottom: 8px;
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+}
+
+.scroll-text {
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-shadow: 0 0 8px rgba(0, 255, 0, 0.6);
+  opacity: 0.8;
+}
+
+.scroll-arrow:hover .arrow-down {
+  box-shadow: 0 0 15px rgba(0, 255, 0, 0.8);
+  border-color: #ffffff;
+}
+
+.scroll-arrow:hover .scroll-text {
+  color: #ffffff;
+  opacity: 1;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  40% {
+    transform: translateX(-50%) translateY(-10px);
+  }
+  60% {
+    transform: translateX(-50%) translateY(-5px);
+  }
+}
+
+@media (max-width: 768px) {
+  .scroll-indicator {
+    bottom: 20px;
+  }
+  
+  .arrow-down {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .scroll-text {
+    font-size: 0.7rem;
   }
 }

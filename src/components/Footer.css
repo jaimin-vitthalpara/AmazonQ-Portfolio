@@ -1,1 +1,88 @@
-.footer {\n  background: rgba(0, 0, 0, 0.8);\n  padding: 20px 0;\n  border-top: 1px solid rgba(0, 255, 0, 0.3);\n  margin-top: 40px;\n}\n\n.copyright {\n  color: #888;\n  text-align: center;\n  font-family: 'Ubuntu Mono', 'Courier New', monospace;\n  font-size: 0.9rem;\n}\n\n.copyright::before {\n  content: '$ ';\n  color: #00ff00;\n  opacity: 0.7;\n}
+.footer {
+  background: rgba(0, 0, 0, 0.9);
+  border-top: 2px solid rgba(0, 255, 0, 0.3);
+  padding: 30px 0;
+  text-align: center;
+  position: relative;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #00ff00, transparent);
+  animation: footerGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes footerGlow {
+  from { opacity: 0.5; }
+  to { opacity: 1; }
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.copyright {
+  color: #00ff00;
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+  font-weight: 600;
+  font-size: 1rem;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+  position: relative;
+}
+
+.copyright::after {
+  content: '_';
+  color: #00ff00;
+  animation: blink 1s infinite;
+  margin-left: 3px;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.footer-note {
+  color: #cccccc;
+  font-family: 'Ubuntu Mono', 'Courier New', monospace;
+  font-size: 0.9rem;
+  margin: 0;
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 20px 0;
+  }
+  
+  .copyright {
+    font-size: 0.9rem;
+  }
+  
+  .footer-note {
+    font-size: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-content {
+    gap: 8px;
+  }
+  
+  .copyright {
+    font-size: 0.85rem;
+  }
+  
+  .footer-note {
+    font-size: 0.75rem;
+  }
+}

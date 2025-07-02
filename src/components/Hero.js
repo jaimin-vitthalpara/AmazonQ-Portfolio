@@ -32,18 +32,20 @@ const Hero = () => {
           </div>
           <div className="hero-image">
             <div className="profile-container">
-              <img 
-                src="/WhatsApp Image 2025-06-08 at 12.36.29 PM.jpeg" 
-                alt="Profile" 
-                className="profile-image"
-                onError={(e) => {
-                  e.target.style.display = 'none';
-                  e.target.nextSibling.style.display = 'flex';
-                }}
-              />
-              <div className="profile-placeholder">
-                <span>Add Your Photo</span>
-              </div>
+              <a href="https://www.linkedin.com/in/jaimin-vitthalpara-291a6a14b" target="_blank" rel="noopener noreferrer">
+                <img 
+                  src="/WhatsApp Image 2025-06-08 at 12.36.29 PM.jpeg" 
+                  alt="Profile" 
+                  className="profile-image"
+                  onError={(e) => {
+                    e.target.style.display = 'none';
+                    e.target.nextSibling.style.display = 'flex';
+                  }}
+                />
+                <div className="profile-placeholder">
+                  <span>Add Your Photo</span>
+                </div>
+              </a>
             </div>
             <div className="tech-icons">
               <FaAws className="tech-icon aws" />
@@ -54,6 +56,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
+
       </div>
     </section>
   );

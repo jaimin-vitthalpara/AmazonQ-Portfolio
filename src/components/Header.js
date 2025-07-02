@@ -29,7 +29,9 @@ const Header = () => {
       <div className="container">
         <nav className="nav">
           <div className="logo">
-            <span>Jaimin Vitthalpara</span>
+            <a href="https://www.linkedin.com/in/jaimin-vitthalpara-291a6a14b" target="_blank" rel="noopener noreferrer">
+              <span>Jaimin Vitthalpara</span>
+            </a>
           </div>
           <ul className="nav-links">
             <li><a href="#home" className={activeSection === 'home' ? 'active' : ''}>Home</a></li>

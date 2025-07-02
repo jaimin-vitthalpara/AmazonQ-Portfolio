@@ -20,6 +20,11 @@
   padding: 20px 0;
 }
 
+.logo a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .logo span {
   font-size: 1.6rem;
   font-weight: 800;
@@ -28,6 +33,12 @@
   letter-spacing: 1px;
   position: relative;
   animation: logoGlow 2s ease-in-out infinite alternate;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logo a:hover span {
+  transform: scale(1.05);
 }
 
 .logo span::before {
